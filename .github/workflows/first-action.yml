@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print gen
-        run: echo "hello world"
+        run: echo "hello world-1"
