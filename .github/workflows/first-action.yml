@@ -6,13 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: install Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '20'
       - name: install dependencies
-        run: npm install
+        run: npm ci
       - name: Run test
         run: npm test
   deploy:
@@ -20,12 +20,12 @@ jobs:
     needs: test
     steps:
       - name: Get code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: install Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '20'
       - name: install dependencies
-        run: npm install
+        run: npm ci
       - name: Deploy to server
         run: echo "Deploying to server..."
